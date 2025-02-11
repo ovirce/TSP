@@ -1,11 +1,16 @@
 document.addEventListener("DOMContentLoaded", function()
 {
-const studentBtn = document.getElementById('studentLogIn');
-studentBtn.addEventListener("click", studentClick);
+const teacherBtn = document.getElementById('teacherLogin');
+teacherBtn.addEventListener("click", function(event)
+{
+    event.preventDefault();
+    teacherClick();
+});
 
-function studentClick()
+function teacherClick()
 {
     alert ("This should appear when button is clicked!");
+    window.location.href = "teacherpage.html";
 }
 
 
