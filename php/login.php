@@ -1,26 +1,43 @@
 <?php
-include 'php/session.php';
+declare(strict_types = 1);                 
+use PhpBook\Validate\Validate;             
 
-if ($logged_in) {
-    header('Location: /account.php');
-    exit;
+include '../src/bootstrap.php';            
+
+$username   = '';                          
+$errors  = [];                             
+$success = $_GET['success'] ?? null;                   
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {              
+    $username = $_POST['username'];                     
+    $password = $_POST['password'];                     
+
+    $errors['email']    = Validate::isUsername($username)
+        ? '' : 'Please enter username';    
+    $errors['password'] = Validate::isPassword($password)
+        ? '' : 'Passwords must be at least 8 characters and have:<br> 
+                A lowercase letter<br>An uppercase letter<br>A number<br>
+                And a special character';  
+    $invalid = implode($errors);                  
+
+    if ($invalid) {                                           
+        $errors['message'] = 'Please try again.';              
+    } else {                                                  
+        $member = $cms->getMember()->login($username, $password); 
+        if ($member and $member['role'] == 'suspended') {      
+            $errors['message'] = 'Account suspended';          
+        } elseif ($member) {                                   
+            $cms->getSession()->create($member);               
+            redirect('member.php', ['id' => $member['id'],]);  
+        } else {                                               
+            $errors['message'] = 'Please try again.';         
+        }
+    }
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($_POST['username'] == $username && $_POST['password'] == $password) {
-        login();
-        header('Location: /account.php');
-        exit;
-    } 
-}
-?>
-<?php include 'php/header.php'; ?>
-<h1> Login </h1>
-<form method="post">
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username">
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password">
-    <button type="submit">Login</button>
-</form>
-<?php include 'php/footer.php'; ?>
+$data['navigation'] = $cms->getCategory()->getAll();         
+$data['success'] = $success;                             
+$data['username'] = $username;                             
+$data['errors'] = $errors;                               
+
+echo $twig->render('login.html', $data);                     

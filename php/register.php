@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 use phpBook\Validate\Validate;
 
 include '../php/setup.php';
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ? '' : 'Username is required';
     $errors['password'] = Validate::isText($member['password'], 1, 254)
         ? '' : 'Password must be at least 8 characters';
-    $errors['confirm'] = ($member['password'] == $confirm)
+    $errors['confirm'] = ($member['password'] = $confirm)
         ? '' : 'Passwords do not match';
     $invalid = implode($errors);
 
@@ -43,4 +43,3 @@ $data['member'] = $member;
 $data['errors'] = $errors;
 
 echo $twig->render('register.html', $data);
-?>
