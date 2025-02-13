@@ -11,12 +11,12 @@
 <body>
   <p> Home page </p>
   <p>Student Log-in</p>
-  <form>
+  <form name = "studentForm">
     <label for="username">Username</label><br>
-    <input type="text" id="username" name="username"><br>
+    <input type="text" id="username" name="studentUsername"><br>
     <label for="password">Password:</label><br>
-    <input type="text" id="password" name="password">
-    <button id="log-in">log-in</button>
+    <input type="text" id="password" name="studentPassword">
+    <button id="studentLogin">log-in</button>
   </form>
   <p> Teachers Log-in </p>
   <form name = "teacherForm">
@@ -25,6 +25,7 @@
     <label for="password">Password:</label><br>
     <input type="text" id="teacherPassword" name="teacherPassword">
     <button id="teacherLogin">log-in</button>
+    </form>
     <p> Guest Log-in </p>
     <form>
       <label for="username">Username</label><br>
@@ -32,6 +33,7 @@
       <label for="password">Password:</label><br>
       <input type="text" id="password" name="password">
       <button for="log-in">log-in</button>
+      </form>
       <p> Create an Account </p>
       <form>
         <label for="Firstname">FirstName</label><br>
@@ -45,7 +47,7 @@
         <label for="password">Repeat Password:</label><br>
         <input type="text" id="password" name="password">
         <button for="log-in">log-in</button>
-
+        </form>
         <script src="index.js"></script>
 </body >
 
