@@ -1,17 +1,33 @@
 document.addEventListener("DOMContentLoaded", function()
 {
 const teacherBtn = document.getElementById('teacherLogin');
+//Activates function when submit button is clicked.
 teacherBtn.addEventListener("click", function(event)
 {
     event.preventDefault();
-    teacherClick();
+    inputValidation();
 });
 
-function teacherClick()
+//Checks that there is a value for the teacher's username and password.
+function inputValidation()
 {
-    alert ("This should appear when button is clicked!");
-    window.location.href = "teacherpage.html";
+    let userName = document.forms["teacherForm"]["teacherUsername"].value; 
+    let password = document.forms["teacherForm"]["teacherPassword"].value; 
+    if (userName == "" || password == "")
+    {
+        alert ("Error: Missing username or password");
+        return false;
+    }
+    else
+    {
+        teacherClick();
+    }
 }
 
+//Open teacher webpage. 
+function teacherClick()
+{
+    window.location.href = "teacherpage.html";
+}
 
 })
