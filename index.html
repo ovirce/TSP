@@ -13,11 +13,15 @@
 <body>
   <p> 16th Century Quest </p>
   <p>Student </p>
-  <form name = "studentForm">
-    <drop down button for="username">Username</drop down button><br>
-    <input type="text" id="username" name="studentUsername"><br>
+  <form name = "studentForm" method="post" action="/php/login.php">
+    {% if success %}<div class="alert alert-success">{{ success }}</div>{% endif %}
+    {% if errors %}<div class="alert alert-danger">{{ errors.message }}</div>{% endif %}
+    <label for="username" >Username</label><br>
+    <input type="text" id="username" name="studentUsername" name="username" id="username" value="{{ username }}"><br>
+    <div class="errors">{{ errors.username }}</div>
     <label for="password">Password:</label><br>
-    <input type="text" id="password" name="studentPassword">
+    <input type="password" name="studentPassword" id="password" class="form-control">
+    <div class="errors">{{ errors.password|raw }}</div>
     <button id="studentLogin">log-in</button>
   </form>
   <p> Teachers </p>

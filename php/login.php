@@ -2,7 +2,7 @@
 declare(strict_types = 1);                 
 use PhpBook\Validate\Validate;             
 
-include '../src/bootstrap.php';            
+include '/php/setup.php';            
 
 $username   = '';                          
 $errors  = [];                             
@@ -40,4 +40,4 @@ $data['success'] = $success;
 $data['username'] = $username;                             
 $data['errors'] = $errors;                               
 
-echo $twig->render('login.html', $data);                     
+echo $twig->render('index.html', $data);                     

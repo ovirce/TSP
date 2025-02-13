@@ -2,7 +2,7 @@
 declare(strict_types = 1);
 use phpBook\Validate\Validate;
 
-include '../php/setup.php';
+include '/php/setup.php';
 $member = [];
 $errors = [];
 
@@ -42,4 +42,4 @@ $data['navigation'] = $cms->getCategory()->getAll();
 $data['member'] = $member;
 $data['errors'] = $errors;
 
-echo $twig->render('register.html', $data);
+echo $twig->render('index.html', $data);
