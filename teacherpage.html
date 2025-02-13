@@ -5,78 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Page</title>
     <link rel="stylesheet" href="style.css"> 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        nav {
-            background-color: #333;
-            padding: 10px;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin-right: 20px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        main {
-            display: flex;
-            padding: 20px;
-        }
-        .class-list {
-            width: 30%;
-            background: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-        }
-        .class-list h2 {
-            text-align: center;
-        }
-        .class-list ul {
-            padding: 0;
-        }
-        .class-list li {
-            background: #ddd;
-            margin: 5px 0;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .class-details {
-            width: 70%;
-            margin-left: 20px;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: none;
-            background: #28a745;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background: #218838;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation bar -->
@@ -93,7 +21,7 @@
         <aside class="class-list">
             <h2>Your Classes</h2>
             <ul>
-                <li class="class-item"><button id="classAButton">Class A</button></li>
+                <li class="class-item"><button id="classOneButton">Class One</button></li>
                 <li class="class-item">Class B</li>
                 <li class="class-item">Class C</li>
             </ul>
@@ -104,7 +32,11 @@
         <section class="class-details">
             <h2>Class Details</h2>
             <div id="details">Select a class to view details.</div>
+            <div id="classOne" class="classHidden">
+                <p>Hello, Jill</p>
+            </div>
         </section>
     </main>
+    <script src="scripts/teacher.js"></script>
 </body>
 </html>
