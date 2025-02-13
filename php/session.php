@@ -26,3 +26,4 @@ function require_login($logged_in){
         exit;
     }
 }
+?>
