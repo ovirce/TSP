@@ -1,8 +1,7 @@
 <?php
 declare(strict_types = 1);
-use phpBook\Validate\Validate;
+use PhpBook\Validate\Validate;
 
-include '/php/setup.php';
 $member = [];
 $errors = [];
 
@@ -20,21 +19,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ? '' : 'Surname is required';
     $errors['email'] = Validate::isEmail($member['email'])
         ? '' : 'Enter valid email address';
-    $errors['username'] = Validate::is_Text($member['username'], 1, 254)
+    $errors['username'] = Validate::isText($member['username'], 1, 254)
         ? '' : 'Username is required';
-    $errors['password'] = Validate::isText($member['password'], 1, 254)
+    $errors['password'] = Validate::isText($member['password'])
         ? '' : 'Password must be at least 8 characters';
     $errors['confirm'] = ($member['password'] = $confirm)
         ? '' : 'Passwords do not match';
     $invalid = implode($errors);
 
     if (!$invalid) {
-        $result = $cms-get_member()->create($member);
+        $result = $cms->getMember()->create($member);
         if ($result === false) {
             $errors['email'] = 'Email address already registered';
             $errors['username'] = 'Username already taken';
         } else {
-            redirect('login.php', ['success' => 'Registration successful']);
+            redirect('login/', ['success' => 'Registration successful']);
         }
     }
 }
