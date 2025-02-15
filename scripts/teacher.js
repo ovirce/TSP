@@ -25,4 +25,6 @@ function classToggle(chosenClass)
     chosenClass.replaceWith(chosenClass);
 }
 
+
+
 })
