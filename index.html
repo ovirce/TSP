@@ -10,7 +10,7 @@
 <body>
   <p> 16th Century Quest </p>
   <p>Student </p>
-  <form name = "studentForm" method="post" action="/php/login.php">
+  <form name = "studentForm" method="post" action="/php/src/login.php">
     <div class="alert alert-success"></div>
     {% if errors %}<div class="alert alert-danger"></div>
     <label for="username" >Username</label><br>
@@ -33,7 +33,7 @@
       <br></br>
     <button for="Create an account">Create an account</button> <!-- when user clicks this, the following will appear-->
       <section class="header"><h1>Register</h1> </section>
-      <form method="post" action="php/register.php" class="register-form">
+      <form method="post" action="php/src/register.php" class="register-form">
         <div class="error">Correct errors</div>
         <label for="forename">Forename: </label>
         <input type="text" id="forename" name="forename" value="{{ member.forename }}">
