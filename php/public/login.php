@@ -1,46 +1,33 @@
 <?php
-declare(strict_types = 1);                 
-use PhpBook\Validate\Validate;             
 
-if ($cms->getSession()->role !== 'public') {             // If user is already logged in
-    redirect('member/' . $cms->getSession()->id);        // Redirect to their page
-    exit;                                                // Stop code running
-}         
+require __DIR__ . '/../src/bootstrap.php';
+require __DIR__ . '/../src/login.php';
+?>
 
-$username   = '';                          
-$errors  = [];                             
-$success = $_GET['success'] ?? null;                   
+<?php view('header', ['title' => 'Login']) ?>
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {              
-    $username = $_POST['username'];                     
-    $password = $_POST['password'];                     
+<?php if (isset($errors['login'])) : ?>
+    <div class="alert alert-error">
+        <?= $errors['login'] ?>
+    </div>
+<?php endif ?>
 
-    $errors['email']    = Validate::isUsername($username)
-        ? '' : 'Please enter username';    
-    $errors['password'] = Validate::isPassword($password)
-        ? '' : 'Passwords must be at least 8 characters and have:<br> 
-                A lowercase letter<br>An uppercase letter<br>A number<br>
-                And a special character';  
-    $invalid = implode($errors);                  
+    <form action="login.php" method="post">
+        <h1>Login</h1>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" value="<?= $inputs['username'] ?? '' ?>">
+            <small><?= $errors['username'] ?? '' ?></small>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+            <small><?= $errors['password'] ?? '' ?></small>
+        </div>
+        <section>
+            <button type="submit">Login</button>
+            <a href="register.php">Register</a>
+        </section>
+    </form>
 
-    if ($invalid) {                                            // If data is not valid
-        $errors['message'] = 'Please try again.';              // Store error message
-    } else {                                                   // If data was valid
-        $member = $cms->getMember()->login($username, $password); // Get member details
-        if ($member and $member['role'] == 'suspended') {      // If member is suspended
-            $errors['message'] = 'Account suspended';          // Store message
-        } elseif ($member) {                                   // Otherwise for members
-            $cms->getSession()->create($member);               // Create session
-            redirect('member/' . $member['id']);               // Redirect to their page
-        } else {                                               // Otherwise
-            $errors['message'] = 'Please try again.';          // Store error message
-        }
-    }
-}
-
-$data['navigation'] = $cms->getCategory()->getAll();         
-$data['success'] = $success;                             
-$data['username'] = $username;                             
-$data['errors'] = $errors;                               
-
-echo $twig->render('index.html', $data);                     
+<?php view('footer') ?>

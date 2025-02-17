@@ -1,44 +1,62 @@
 <?php
-declare(strict_types = 1);
-use PhpBook\Validate\Validate;
+require __DIR__ . '/../src/bootstrap.php';
+require __DIR__ . '/../src/register.php';
+?>
 
-$member = [];
-$errors = [];
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $member['forename'] = $_POST['forename'];
-    $member['surname'] = $_POST['surname'];
-    $member['email'] = $_POST['email'];
-    $member['username'] = $_POST['username'];
-    $member['password'] = $_POST['password'];
-    $confirm = $_POST['confirm'];
+<?php
 
-    $errors['forename'] = Validate::isText($member['forename'], 1, 254)
-        ? '' : 'Forename is required';
-    $errors['surname'] = Validate::isText($member['surname'], 1, 254)
-        ? '' : 'Surname is required';
-    $errors['email'] = Validate::isEmail($member['email'])
-        ? '' : 'Enter valid email address';
-    $errors['username'] = Validate::isText($member['username'], 1, 254)
-        ? '' : 'Username is required';
-    $errors['password'] = Validate::isText($member['password'])
-        ? '' : 'Password must be at least 8 characters';
-    $errors['confirm'] = ($member['password'] = $confirm)
-        ? '' : 'Passwords do not match';
-    $invalid = implode($errors);
+if (is_user_logged_in()) {
+    redirect_to('index.php');
+} ?>
 
-    if (!$invalid) {
-        $result = $cms->getMember()->create($member);
-        if ($result === false) {
-            $errors['email'] = 'Email address already registered';
-            $errors['username'] = 'Username already taken';
-        } else {
-            redirect('login/', ['success' => 'Registration successful']);
-        }
-    }
-}
-$data['navigation'] = $cms->getCategory()->getAll();
-$data['member'] = $member;
-$data['errors'] = $errors;
+<?php view('header', ['title' => 'Register']) ?>
 
-echo $twig->render('index.html', $data);
+<form action="register.php" method="post">
+    <h1>Sign Up</h1>
+
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" value="<?= $inputs['username'] ?? '' ?>"
+               class="<?= error_class($errors, 'username') ?>">
+        <small><?= $errors['username'] ?? '' ?></small>
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="<?= $inputs['email'] ?? '' ?>"
+               class="<?= error_class($errors, 'email') ?>">
+        <small><?= $errors['email'] ?? '' ?></small>
+    </div>
+
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" value="<?= $inputs['password'] ?? '' ?>"
+               class="<?= error_class($errors, 'password') ?>">
+        <small><?= $errors['password'] ?? '' ?></small>
+    </div>
+
+    <div>
+        <label for="password2">Password Again:</label>
+        <input type="password" name="password2" id="password2" value="<?= $inputs['password2'] ?? '' ?>"
+               class="<?= error_class($errors, 'password2') ?>">
+        <small><?= $errors['password2'] ?? '' ?></small>
+    </div>
+
+    <div>
+        <label for="agree">
+            <input type="checkbox" name="agree" id="agree" value="checked" <?= $inputs['agree'] ?? '' ?> /> I
+            agree
+            with the
+            <a href="#" title="term of services">term of services</a>
+        </label>
+        <small><?= $errors['agree'] ?? '' ?></small>
+    </div>
+
+    <button type="submit">Register</button>
+
+    <footer>Already a member? <a href="login.php">Login here</a></footer>
+
+</form>
+
+<?php view('footer') ?>
