@@ -11,7 +11,8 @@ const classTwoContent = document.getElementById('classTwo');
 
 classOneBtn.addEventListener("click", function()
 {
-    classToggle(classOneContent);
+    divClear();
+    //classToggle(classOneContent);
 });
 
 classTwoBtn.addEventListener("click", function()
@@ -19,10 +20,29 @@ classTwoBtn.addEventListener("click", function()
     classToggle(classTwoContent);
 });
 
+function divClear()
+{
+    element.innerHTML = "Hello";
+}
+
 function classToggle(chosenClass)
 {
+   /* const temp = chosenClass; //stored as temp. 
+    chosenClass.innerHTML = "";
     chosenClass.classList.toggle('hiddenClass');
-    chosenClass.replaceWith(chosenClass);
+    temp.classList.toggle('hiddenClass');*/
+    
+    
+
+   /* if (!chosenClass.innerHTML)
+    {
+        alert("Something");
+    }
+    else
+    {
+        chosenClass.classList.toggle('hiddenClass');
+        chosenClass.replaceWith(chosenClass);
+    }*/
 }
 
 
