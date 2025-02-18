@@ -49,7 +49,7 @@ if (isset($_SESSION["user"])) {
             <input type="password" placeholder="Enter Password:" name="password" id="studentPassword" class="form-control">
         </div>
         <div class="form-btn">
-            <input type="submit" value="Login" name="login" id="studentLogin" class="btn btn-primary>
+            <input type="submit" value="Login" name="login" id="studentLogin" class="btn btn-primary">
         </div>
       </form>
      <div><p>Not registered yet <a href="registration.php">Register Here</a></p></div>
