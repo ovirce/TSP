@@ -31,13 +31,33 @@ classThreeBtn.addEventListener("click", function()
     classToggle(classThreeContent);
 });
 
+function buttonLoad()
+{
+    let savedButton =  JSON.parse(localStorage.getItem('savedButton')) || [];
+    savedButton.forEach(function(text)
+    {
+        buttonCreate(text);
+    });
+}
+
+function buttonCreate(buttonText)
+{
+    var classButton = document.createElement("BUTTON");
+    classButton.textContent = buttonText; 
+    classListContent.appendChild(classButton);
+}
 /* --- Will not work because the new class will need to be saved --- */
 addClassBtn.addEventListener("click", function()
 {
-    var classButton = document.createElement("BUTTON");
-    var buttonText = document.createTextNode("class test");
-    classButton.appendChild(buttonText);
-    classListContent.appendChild(classButton);
+    const savedButton = JSON.parse(localStorage.getItem('savedButton')) || [];
+   // localStorage.setItem(classButton, JSON.stringify(savedButton));
+   // let currentClassNo = 3; 
+   // let buttonText = `Class ${currentClassNo + 1}`; 
+   let buttonText = `Class ${savedButton.length + 1}`; 
+    savedButton.push(buttonText);
+    localStorage.setItem('savedButton', JSON.stringify(savedButton));  
+    buttonCreate(buttonText);
+    localStorage.clear();
 });
 
 /* --- Clears the currently displayed content. --- */ 
@@ -57,6 +77,7 @@ function classToggle(chosenClass)
     console.log("New content should now be displayed.");
 }
 
+buttonLoad();
 //Changes. 
 
 })
