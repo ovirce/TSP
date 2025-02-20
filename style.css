@@ -9,6 +9,11 @@
     display:none; 
 }
 
+#removeClassFormHidden
+{
+    display:none;
+}
+
 /* --- CSS that Ben did for his HTML, I just moved it in here - Max --- */
 body {
     font-family: Arial, sans-serif;

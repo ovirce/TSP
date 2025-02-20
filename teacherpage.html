@@ -10,7 +10,7 @@
     <!-- Navigation bar -->
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home_page.php">Home</a></li>
             <li><a href="students.html">Students</a></li>
             <li><a href="teacher.html" class="active">Class Management</a></li>
         </ul>
@@ -25,7 +25,8 @@
                 <li class="class-item"><button id="classTwoButton">Class Two</button></li>
                 <li class="class-item"><button id="classThreeButton">Class Three</button></li>
             </ul> 
-            <button id="addClassButton">+ Add Class</button>
+            <button id="addClassButton">Add Class</button>
+            <button id="removeClassForm">Remove Class</button>
         </aside>
         
         <!-- Section to display class details -->
@@ -40,6 +41,17 @@
             </div>
             <div id="classThree" class="hiddenClass">
                 <p>Class three information.</p>
+            </div>
+        </section>
+
+        <section id="classRemoval">
+            <div class="removeContainer">
+                <form id="removeClassFormHidden">
+                    <div class="form-group">
+                        <input type="className" placeHolder="Enter class name" name="className" id="className">
+                    </div>
+                        <input type="submit" value="remove" id="removeClassButton">                   
+                </form>
             </div>
         </section>
     </main>
