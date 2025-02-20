@@ -19,7 +19,6 @@ if (isset($_SESSION["user"])) {
         <?php
         if (isset($_POST["submit"])) {
            $username = $_POST["username"];
-           $email = $_POST["email"];
            $password = $_POST["password"];
            $passwordRepeat = $_POST["repeat_password"];
            
@@ -27,11 +26,8 @@ if (isset($_SESSION["user"])) {
 
            $errors = array();
            
-           if (empty($username) OR empty($email) OR empty($password) OR empty($passwordRepeat)) {
+           if (empty($username) OR empty($password) OR empty($passwordRepeat)) {
             array_push($errors,"All fields are required");
-           }
-           if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            array_push($errors, "Email is not valid");
            }
            if (strlen($password)<8) {
             array_push($errors,"Password must be at least 8 charactes long");
@@ -52,11 +48,11 @@ if (isset($_SESSION["user"])) {
             }
            }else{
             
-            $sql = "INSERT INTO users (username, email, password) VALUES ( ?, ?, ? )";
+            $sql = "INSERT INTO users (username, password) VALUES ( ?, ? )";
             $stmt = mysqli_stmt_init($conn);
             $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
             if ($prepareStmt) {
-                mysqli_stmt_bind_param($stmt,"sss",$username, $email, $passwordHash);
+                mysqli_stmt_bind_param($stmt, "ss", $username, $passwordHash);
                 mysqli_stmt_execute($stmt);
                 echo "<div class='alert alert-success'>You are registered successfully.</div>";
             }else{
@@ -67,12 +63,9 @@ if (isset($_SESSION["user"])) {
 
         }
         ?>
-        <form action="registration.php" method="post">
+        <form action="student_registration.php" method="post">
             <div class="form-group">
                 <input type="text" class="form-control" name="username" placeholder="Username:">
-            </div>
-            <div class="form-group">
-                <input type="email" class="form-control" name="email" placeholder="Email:">
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" name="password" placeholder="Password:">

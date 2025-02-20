@@ -19,10 +19,10 @@ if (isset($_SESSION["user"])) {
     
         <?php
         if (isset($_POST["login"])) {
-           $email = $_POST["email"];
+           $email = $_POST["username"];
            $password = $_POST["password"];
             require_once "database.php";
-            $sql = "SELECT * FROM users WHERE email = '$email'";
+            $sql = "SELECT * FROM users WHERE username = '$username'";
             $result = mysqli_query($conn, $sql);
             $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
             if ($user) {
@@ -41,9 +41,9 @@ if (isset($_SESSION["user"])) {
         ?>
     <div class="container">
         <h1>Student Login Form</h1>
-      <form action="login.php" method="post" name="studentForm">
+      <form action="home_page.php" method="post" name="studentForm">
         <div class="form-group">
-            <input type="email" placeholder="Enter Email:" name="email" id="studentUsername" class="form-control">
+            <input type="username" placeholder="Enter Username:" name="username" id="studentUsername" class="form-control">
         </div>
         <div class="form-group">
             <input type="password" placeholder="Enter Password:" name="password" id="studentPassword" class="form-control">
@@ -52,12 +52,12 @@ if (isset($_SESSION["user"])) {
             <input type="submit" value="Login" name="login" id="studentLogin" class="btn btn-primary">
         </div>
       </form>
-     <div><p>Not registered yet <a href="registration.php">Register Here</a></p></div>
+     <div><p>Not registered yet <a href="student_registration.php">Register Here</a></p></div>
     
     <h1>Teacher Login Form</h1>
-    <form action="login.php" method="post" name="teacherForm">
+    <form action="home_page.php" method="post" name="teacherForm">
         <div class="form-group">
-            <input type="email" placeholder="Enter Email:" name="email" id="teacherUsername" class="form-control">
+            <input type="username" placeholder="Enter username:" name="username" id="teacherUsername" class="form-control">
         </div>
         <div class="form-group">
             <input type="password" placeholder="Enter Password:" name="password" id="teacherPassword" class="form-control">
