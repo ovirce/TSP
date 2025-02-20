@@ -62,6 +62,6 @@ function classToggle(chosenClass)
     }*/
 }
 
-
+//Changes. 
 
 })
