@@ -11,6 +11,7 @@ const classTwoContent = document.getElementById('classTwo');
 const classThreeContent = document.getElementById('classThree');
 
 const addClassBtn = document.getElementById('addClassButton');
+const classListContent = document.getElementById('classListSection');
 
 classOneBtn.addEventListener("click", function()
 {
@@ -30,9 +31,13 @@ classThreeBtn.addEventListener("click", function()
     classToggle(classThreeContent);
 });
 
+/* --- Will not work because the new class will need to be saved --- */
 addClassBtn.addEventListener("click", function()
 {
-    
+    var classButton = document.createElement("BUTTON");
+    var buttonText = document.createTextNode("class test");
+    classButton.appendChild(buttonText);
+    classListContent.appendChild(classButton);
 });
 
 /* --- Clears the currently displayed content. --- */ 
@@ -50,16 +55,6 @@ function classToggle(chosenClass)
     temp.classList.remove('hiddenClass');
     element.appendChild(temp);
     console.log("New content should now be displayed.");
-   
-   /* if (!chosenClass.innerHTML)
-    {
-        alert("Something");
-    }
-    else
-    {
-        chosenClass.classList.toggle('hiddenClass');
-        chosenClass.replaceWith(chosenClass);
-    }*/
 }
 
 //Changes. 
