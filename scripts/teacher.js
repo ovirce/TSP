@@ -12,8 +12,8 @@ const classThreeContent = document.getElementById('classThree');
 
 const addClassBtn = document.getElementById('addClassButton');
 const classListContent = document.getElementById('classListSection');
-const removeClassForm = document.getElementById('removeClassFormHidden');
-//const removeClassBtn = document.getElementById('removeClassButton');
+//const removeClassForm = document.getElementById('removeClassFormHidden');
+const removeClassBtn = document.getElementById('removeClassFormButton');
 const removalElement = document.getElementById('classRemoval');
 
 classOneBtn.addEventListener("click", function()
@@ -75,13 +75,13 @@ addClassBtn.addEventListener("click", function()
     savedButton.push(buttonText);
     localStorage.setItem('savedButton', JSON.stringify(savedButton)); //Converts the object into JSON. 
     buttonCreate(buttonText); 
-    localStorage.clear(); //Removes the buttons created. 
+   // localStorage.clear(); //Removes the buttons created. 
 });
 
-removeClassForm.addEventListener("click", function()
+removeClassBtn.addEventListener("click", function()
 {
     console.log("Before class removal");
-    removalElement.remove('removeClassFormHidden');
+    removalElement.classList.remove('hiddenClass');
     console.log("After class removal");
 });
 
