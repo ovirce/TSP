@@ -13,8 +13,9 @@ const classThreeContent = document.getElementById('classThree');
 const addClassBtn = document.getElementById('addClassButton');
 const classListContent = document.getElementById('classListSection');
 //const removeClassForm = document.getElementById('removeClassFormHidden');
-const removeClassBtn = document.getElementById('removeClassFormButton');
-const removalElement = document.getElementById('classRemoval');
+const removeClassFormBtn = document.getElementById('removeClassFormButton');
+const removalElement = document.getElementById('classRemovalSection');
+const removeClassBtn = document.getElementById('removeClassButton');
 
 classOneBtn.addEventListener("click", function()
 {
@@ -50,7 +51,7 @@ function buttonCreate(buttonText)
     classButton.textContent = buttonText; 
     classListContent.appendChild(classButton);
 }
-/* --- Will not work because the new class will need to be saved --- */
+/* --- Saves the created buttons using session storage. --- */
 addClassBtn.addEventListener("click", function()
 {
     const savedButton = JSON.parse(localStorage.getItem('savedButton')) || []; //Converts the object from JSON back into button object. 
@@ -75,20 +76,77 @@ addClassBtn.addEventListener("click", function()
     savedButton.push(buttonText);
     localStorage.setItem('savedButton', JSON.stringify(savedButton)); //Converts the object into JSON. 
     buttonCreate(buttonText); 
-   // localStorage.clear(); //Removes the buttons created. 
+    localStorage.clear(); //Removes the buttons created. 
 });
 
-removeClassBtn.addEventListener("click", function()
+removeClassFormBtn.addEventListener("click", function()
 {
     console.log("Before class removal");
     removalElement.classList.remove('hiddenClass');
     console.log("After class removal");
 });
 
-/*removeClassBtn.addEventListener("click", function()
+removeClassBtn.addEventListener("click", function()
 {
+    var removedClass = document.getElementById('classNameID').value;
+    removeClass(removedClass);
+})
+
+function removeClass(removedClass)
+{
+   /* var temp = document.querySelector(removedClass);
+    if (temp)
+    {
+        console.log("If statement executed");
+        alert("Class exists");
+    }
+    else
+    {
+        console.log("Else statement executed");
+        alert("Class does not exist");
+    }*/
+
+    const classButtons = document.getElementsByTagName("button");
+    for (let i = 0; i <= classButtons.length; i++)
+    {
+        if (classButtons[i].innerText == removedClass)
+            {
+                console.log("If statement executed.")
+                alert("Class exists.");
+                break; 
+            }
+            else
+            {
+                console.log("Else statement executed.");
+            //    alert("Class does not exist.");
+             //   break;
+            } 
+    }
     
-});*/
+    /*
+    console.log("Before if statement:"+ removedClass);
+    if (classListContent !== removedClass)
+    {
+        console.log("Else statement executed");
+        alert("Class does not exist");
+    }
+    else
+    {
+        console.log("If statement executed");
+        alert("Class exists");
+    }
+   
+    /* if (removedClass == 1)
+    {
+        console.log("if statement");
+        alert("Hi");
+    }
+    else
+    {
+        console.log("else statement");
+        alert("Bye");
+    }*/
+};
 
 /* --- Clears the currently displayed content. --- */ 
 function divClear()

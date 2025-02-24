@@ -44,15 +44,15 @@
             </div>
         </section>
 
-        <section id="remove">
-            <div id="classRemoval" class="hiddenClass">
-                <form id="removeClassFormHidden">
-                    <div class="form-group">
-                        <input type="className" placeHolder="Enter class name" name="className" id="className">
-                    </div>
-                        <input type="submit" value="remove" id="removeClassButton">                   
+        <section id="classRemovalSection" class="hiddenClass">
+          <!--  <div id="classRemoval" class="hiddenClass"> --> 
+                <form id="classRemovalForm">
+                    <!-- <div class="form-group"> -->
+                        <input type="text" placeHolder="Enter class name" name="className" id="classNameID">
+                    <!-- </div> -->
+                        <button type="submit" form="classRemovalForm" id="removeClassButton" value="Submit">Remove Class</button>            
                 </form>
-            </div>
+           <!-- </div> --> 
         </section>
     </main>
     <script src="scripts/teacher.js"></script>
