@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); //redirects to the home page
 if (!isset($_SESSION["user"])) {
    header("Location: home_page.php");
 }

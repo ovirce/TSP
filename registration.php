@@ -17,50 +17,50 @@ if (isset($_SESSION["user"])) {
 <body>
     <div class="container">
         <?php
-        if (isset($_POST["submit"])) {
-           $username = $_POST["username"];
-           $email = $_POST["email"];
-           $password = $_POST["password"];
-           $passwordRepeat = $_POST["repeat_password"];
+        if (isset($_POST["submit"])) { //check if the form is submitted
+           $username = $_POST["username"]; //send the username from the form
+           $email = $_POST["email"]; //send the email from the form
+           $password = $_POST["password"]; //send the password from the form
+           $passwordRepeat = $_POST["repeat_password"]; //send the repeat password from the form
            
-           $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+           $passwordHash = password_hash($password, PASSWORD_DEFAULT); //hash the password for security purposes
 
-           $errors = array();
+           $errors = array(); //create an empty array to store the errors
            
            if (empty($username) OR empty($email) OR empty($password) OR empty($passwordRepeat)) {
-            array_push($errors,"All fields are required");
+            array_push($errors,"All fields are required"); //check if the fields are empty
            }
            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            array_push($errors, "Email is not valid");
+            array_push($errors, "Email is not valid"); //check if the email is valid
            }
            if (strlen($password)<8) {
-            array_push($errors,"Password must be at least 8 charactes long");
+            array_push($errors,"Password must be at least 8 charactes long"); //check if the password is less than 8 characters
            }
            if ($password!==$passwordRepeat) {
-            array_push($errors,"Password does not match");
+            array_push($errors,"Password does not match");//check if the password and repeat password are the same
            }
-           require_once "database.php";
-           $sql = "SELECT * FROM users WHERE username = '$username'";
-           $result = mysqli_query($conn, $sql);
-           $rowCount = mysqli_num_rows($result);
-           if ($rowCount>0) {
+           require_once "database.php"; //include the database file
+           $sql = "SELECT * FROM users WHERE username = '$username'"; //check if the username already exists
+           $result = mysqli_query($conn, $sql); //make a query to the database
+           $rowCount = mysqli_num_rows($result); //count the number of rows the username has in the database
+           if ($rowCount>0) { //if the row count is more than 0 then the username already exists
             array_push($errors,"username already exists!");
            }
-           if (count($errors)>0) {
-            foreach ($errors as  $error) {
-                echo "<div class='alert alert-danger'>$error</div>";
+           if (count($errors)>0) { //if there are errors in the array
+            foreach ($errors as  $error) { //loop through the errors
+                echo "<div class='alert alert-danger'>$error</div>"; //display the errors
             }
            }else{
             
-            $sql = "INSERT INTO users (username, email, password) VALUES ( ?, ?, ? )";
-            $stmt = mysqli_stmt_init($conn);
-            $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
-            if ($prepareStmt) {
-                mysqli_stmt_bind_param($stmt,"sss",$username, $email, $passwordHash);
-                mysqli_stmt_execute($stmt);
-                echo "<div class='alert alert-success'>You are registered successfully.</div>";
+            $sql = "INSERT INTO users (username, email, password) VALUES ( ?, ?, ? )"; //insert the data into the database
+            $stmt = mysqli_stmt_init($conn); //initialize the statement
+            $prepareStmt = mysqli_stmt_prepare($stmt,$sql); //prepare the statement
+            if ($prepareStmt) { //if the statement is prepared
+                mysqli_stmt_bind_param($stmt,"sss",$username, $email, $passwordHash);//bind the parameters
+                mysqli_stmt_execute($stmt);//execute the statement
+                echo "<div class='alert alert-success'>You are registered successfully.</div>";//message to say the user is registered
             }else{
-                die("Something went wrong");
+                die("Something went wrong"); //if the statement is not prepared, display an error message and kill the script
             }
            }
           
