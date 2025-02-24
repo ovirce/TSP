@@ -18,24 +18,24 @@ if (isset($_SESSION["user"])) {
 <body>
     
         <?php
-        if (isset($_POST["login"])) {
-           $email = $_POST["username"];
-           $password = $_POST["password"];
-            require_once "database.php";
-            $sql = "SELECT * FROM users WHERE username = '$username'";
-            $result = mysqli_query($conn, $sql);
-            $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        if (isset($_POST["login"])) { //php for the login form
+           $email = $_POST["username"]; //posts the email
+           $password = $_POST["password"];//posts the password
+            require_once "database.php";//requires the database.php file
+            $sql = "SELECT * FROM users WHERE username = '$username'"; //selects the username from the database
+            $result = mysqli_query($conn, $sql); //gets the sql query 
+            $user = mysqli_fetch_array($result, MYSQLI_ASSOC); //fetches the users from the database to see if it is already stored
             if ($user) {
-                if (password_verify($password, $user["password"])) {
-                    session_start();
-                    $_SESSION["user"] = "yes";
-                    header("Location: index.php");
-                    die();
+                if (password_verify($password, $user["password"])) { //verifies the password
+                    session_start(); //starts the session
+                    $_SESSION["user"] = "yes"; //sets the session
+                    header("Location: index.php"); //redirects to the index.php page
+                    die(); //kills the script
                 }else{
-                    echo "<div class='alert alert-danger'>Password does not match</div>";
+                    echo "<div class='alert alert-danger'>Password does not match</div>"; //displays an error message
                 }
             }else{
-                echo "<div class='alert alert-danger'>Username does not match</div>";
+                echo "<div class='alert alert-danger'>Username does not match</div>"; //displays an error message
             }
         }
         ?>
