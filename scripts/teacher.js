@@ -17,6 +17,7 @@ const removeClassFormBtn = document.getElementById('removeClassFormButton');
 const removalElement = document.getElementById('classRemovalSection');
 const removeClassBtn = document.getElementById('removeClassButton');
 
+
 classOneBtn.addEventListener("click", function()
 {
     divClear();
@@ -113,6 +114,7 @@ function removeClass(removedClass)
             {
                 console.log("If statement executed.")
                 alert("Class exists.");
+                //classButtons[i].remove();
                 break; 
             }
             else
