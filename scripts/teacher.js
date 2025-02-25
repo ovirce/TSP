@@ -49,11 +49,14 @@ function buttonLoad()
 function buttonCreate(buttonText)
 {
     var classButton = document.createElement("BUTTON");
+    classButton.classList.add("classButton");
     classButton.textContent = buttonText; 
     classListContent.appendChild(classButton);
 }
 /* --- Saves the created buttons using session storage. --- */
-addClassBtn.addEventListener("click", function()
+addClassBtn.addEventListener("click", saveButton);
+
+function saveButton()
 {
     const savedButton = JSON.parse(localStorage.getItem('savedButton')) || []; //Converts the object from JSON back into button object. 
    // localStorage.setItem(classButton, JSON.stringify(savedButton));
@@ -78,7 +81,7 @@ addClassBtn.addEventListener("click", function()
     localStorage.setItem('savedButton', JSON.stringify(savedButton)); //Converts the object into JSON. 
     buttonCreate(buttonText); 
     localStorage.clear(); //Removes the buttons created. 
-});
+}
 
 removeClassFormBtn.addEventListener("click", function()
 {
@@ -87,8 +90,9 @@ removeClassFormBtn.addEventListener("click", function()
     console.log("After class removal");
 });
 
-removeClassBtn.addEventListener("click", function()
+removeClassBtn.addEventListener("click", function(event)
 {
+    event.preventDefault();
     var removedClass = document.getElementById('classNameID').value;
     removeClass(removedClass);
 })
@@ -106,25 +110,51 @@ function removeClass(removedClass)
         console.log("Else statement executed");
         alert("Class does not exist");
     }*/
-
-    const classButtons = document.getElementsByTagName("button");
-    for (let i = 0; i <= classButtons.length; i++)
+    const savedButton = JSON.parse(localStorage.getItem('savedButton')) || []; //Converts the object from JSON back into button object
+    const classButtons = document.getElementsByClassName("classButton"); //Finds all buttons with specific class name. 
+    var temp = false; 
+    for (let i = 0; i <= classButtons.length; i++) //Loop through all the buttons on the page. 
     {
-        if (classButtons[i].innerText == removedClass)
+        if (removedClass == classButtons[i].innerText) //If inputted text matches button innertext...
             {
-                console.log("If statement executed.")
-                alert("Class exists.");
-                //classButtons[i].remove();
-                break; 
+                let warningText = "Warning: Removing a class will delete it permanently. Do you wish to continue?";
+                if(confirm(warningText) == true)
+                    {
+                        warningText = "Class Successfully Removed";
+                        alert(warningText);
+                        console.log("If statement executed.")
+                        //alert("Class exists.");
+                        // var random = classButtons[i].innerText;
+                        classButtons[i].remove(); //Remove button with matched name. 
+                         // console.log("Random = " + random);
+                        // localStorage.removeItem(random);
+                        temp = true; 
+                        break; 
+                    }
+                else
+                    {
+                        warningText = "Removal Cancelled";
+                        alert(warningText);
+                    }
             }
-            else
-            {
-                console.log("Else statement executed.");
-            //    alert("Class does not exist.");
-             //   break;
-            } 
     }
     
+    console.log("Value of boolean is: " + temp);
+    if (temp)
+    {
+        let updatedButtons = savedButton.filter(button => button !== removedClass); //Filters through array, removing removedClass element. 
+        localStorage.setItem('savedButton', JSON.stringify(updatedButtons)) //Updates the local storage. 
+        //alert("Successful Removal");
+       // console.log("Value of boolean in if statement: " + temp);
+       // alert("Class does not exist");
+    }
+    else
+    {
+        console.log("Class does not exist.");
+    }
+
+  //  saveButton(classButtons);
+      
     /*
     console.log("Before if statement:"+ removedClass);
     if (classListContent !== removedClass)
