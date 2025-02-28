@@ -56,7 +56,7 @@ function teacherClick()
 
 function studentClick()
 {
-    alert("This webpage does not exist");
+    window.location.href = "studentPage.html";
 }
 
 
