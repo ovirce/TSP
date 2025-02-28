@@ -44,12 +44,12 @@ if (isset($_SESSION["user"])) {
         ?>
     <div class="container">
         <h1>Student Login Form</h1>
-      <form action="" method="post" name="studentForm">
+      <form action="home_page.php" method="post" name="studentForm">
         <div class="form-group">
-            <input type="username" placeholder="Enter Username:" name="username" id="studentUsername" class="form-control">
+            <input type="username" placeholder="Enter Username:" name="username" id="username" class="form-control">
         </div>
         <div class="form-group">
-            <input type="password" placeholder="Enter Password:" name="password" id="studentPassword" class="form-control">
+            <input type="password" placeholder="Enter Password:" name="password" id="password" class="form-control">
         </div>
         <div class="form-btn">
             <input type="submit" value="Login" name="login" id="studentLogin" class="btn btn-primary">
