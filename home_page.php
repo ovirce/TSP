@@ -18,17 +18,20 @@ if (isset($_SESSION["user"])) {
 <body>
     
         <?php
+        require_once "database.php";//requires the database.php file
         if (isset($_POST["login"])) { //php for the login form
-           $email = $_POST["username"]; //posts the email
+           $username = $_POST["username"]; //posts the email
            $password = $_POST["password"];//posts the password
-            require_once "database.php";//requires the database.php file
-            $sql = "SELECT * FROM users WHERE username = '$username'"; //selects the username from the database
-            $result = mysqli_query($conn, $sql); //gets the sql query 
-            $user = mysqli_fetch_array($result, MYSQLI_ASSOC); //fetches the users from the database to see if it is already stored
+            
+           $stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE username = ?"); //prepares the statement
+           mysqli_stmt_bind_param($stmt, "s", $username); //binds the parameters
+           mysqli_stmt_execute($stmt); //executes the statement
+           $result = mysqli_stmt_get_result($stmt); //gets the result from the database
+           $user = mysqli_fetch_array($result, MYSQLI_ASSOC); //fetches the users from the database to see if it is already stored
             if ($user) {
                 if (password_verify($password, $user["password"])) { //verifies the password
                     session_start(); //starts the session
-                    $_SESSION["user"] = "yes"; //sets the session
+                    $_SESSION["user"] = $username; //sets the session
                     header("Location: index.php"); //redirects to the index.php page
                     die(); //kills the script
                 }else{
@@ -41,7 +44,7 @@ if (isset($_SESSION["user"])) {
         ?>
     <div class="container">
         <h1>Student Login Form</h1>
-      <form action="home_page.php" method="post" name="studentForm">
+      <form action="" method="post" name="studentForm">
         <div class="form-group">
             <input type="username" placeholder="Enter Username:" name="username" id="studentUsername" class="form-control">
         </div>
@@ -55,7 +58,7 @@ if (isset($_SESSION["user"])) {
      <div><p>Not registered yet <a href="student_registration.php">Register Here</a></p></div>
     
     <h1>Teacher Login Form</h1>
-    <form action="home_page.php" method="post" name="teacherForm">
+    <form action="" method="post" name="teacherForm">
         <div class="form-group">
             <input type="username" placeholder="Enter username:" name="username" id="teacherUsername" class="form-control">
         </div>
