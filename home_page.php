@@ -22,7 +22,7 @@ if (isset($_SESSION["user"])) {
         if (isset($_POST["login"])) { //php for the login form
            $username = $_POST["username"]; //posts the email
            $password = $_POST["password"];//posts the password
-            
+        
            $stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE username = ?"); //prepares the statement
            mysqli_stmt_bind_param($stmt, "s", $username); //binds the parameters
            mysqli_stmt_execute($stmt); //executes the statement
@@ -40,7 +40,7 @@ if (isset($_SESSION["user"])) {
             }else{
                 echo "<div class='alert alert-danger'>Username does not match</div>"; //displays an error message
             }
-        }
+        }//view model topic 7 on canvas
         ?>
     <div class="container">
         <h1>Student Login Form</h1>
