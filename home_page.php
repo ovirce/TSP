@@ -69,7 +69,7 @@ if (isset($_SESSION["user"])) {
             <input type="submit" value="Login" name="login" id="teacherLogin" class="btn btn-primary">
         </div>
       </form>
-     <div><p>Not registered yet <a href="registration.php">Register Here</a></p></div>
+     <div><p>Guest</a></p></div>
     </div>
 </div>
 </body>
