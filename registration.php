@@ -13,6 +13,7 @@ if (isset($_SESSION["user"])) {
     <title>Registration Form</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="scripts/accountCreation.js"></script>
 </head>
 <body>
     <div class="container">
@@ -67,21 +68,21 @@ if (isset($_SESSION["user"])) {
 
         }
         ?>
-        <form action="registration.php" method="post">
+        <form action="registration.php" method="post" name="accountCreationForm" id="accountCreationForm">
             <div class="form-group">
-                <input type="text" class="form-control" name="username" placeholder="Username:">
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username:">
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" name="email" placeholder="Email:">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email:">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" name="password" placeholder="Password:">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password:">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" name="repeat_password" placeholder="Repeat Password:">
+                <input type="password" class="form-control" name="repeat_password" id="repeatPassword" placeholder="Repeat Password:">
             </div>
             <div class="form-btn">
-                <input type="submit" class="btn btn-primary" value="Register" name="submit">
+                <input type="submit" class="btn btn-primary" value="Register" id="registration" name="submit">
             </div>
         </form>
         <div>
