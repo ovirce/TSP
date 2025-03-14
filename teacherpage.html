@@ -25,7 +25,13 @@
                 <li class="classButton"><button id="classTwoButton">Class Two</button></li>
                 <li class="classButton"><button id="classThreeButton">Class Three</button></li>
             </ul> 
-            <button id="addClassButton">Add Class</button>
+            <button id="addClassFormButton">Add Class</button>
+
+            <form id="addClassForm" class="hiddenClass">
+                <input type="text" placeholder="Enter class name" name="className" id="className">
+                <button type="submit" form="addClassForm" id="submitClassButton" value="submit">Submit Class</button>
+            </form>
+
             <button id="removeClassFormButton">Remove Class</button>
         </aside>
         
