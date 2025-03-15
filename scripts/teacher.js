@@ -10,14 +10,13 @@ const classOneContent = document.getElementById('classOne');
 const classTwoContent = document.getElementById('classTwo');
 const classThreeContent = document.getElementById('classThree');
 
-const addClassFormBtn = document.getElementById('addClassFormButton');
+const addClassBtn = document.getElementById('addClassButton');
 const classListContent = document.getElementById('classListSection');
 //const removeClassForm = document.getElementById('removeClassFormHidden');
 const removeClassFormBtn = document.getElementById('removeClassFormButton');
 const removalElement = document.getElementById('classRemovalSection');
 const removeClassBtn = document.getElementById('removeClassButton');
-let addClassForm = document.forms["addClassForm"];
-submitClassBtn = document.getElementById('submitClassButton');
+
 
 classOneBtn.addEventListener("click", function()
 {
@@ -55,27 +54,9 @@ function buttonCreate(buttonText)
     classListContent.appendChild(classButton);
 }
 /* --- Saves the created buttons using session storage. --- */
-addClassFormBtn.addEventListener("click", function()
-{
-    addClassForm.classList.remove('hiddenClass');
-})
+addClassBtn.addEventListener("click", saveButton);
 
-submitClassBtn.addEventListener("click", setClassName);
-
-function setClassName()
-{
-    let className = document.forms["addClassForm"]["className"].value;
-    if (className == "")
-    {
-        alert("Please enter a class name.");
-    }
-    else
-    {
-        saveButton(className);
-    }
-}
-
-function saveButton(className)
+function saveButton()
 {
     const savedButton = JSON.parse(localStorage.getItem('savedButton')) || []; //Converts the object from JSON back into button object. 
    // localStorage.setItem(classButton, JSON.stringify(savedButton));
@@ -95,7 +76,7 @@ function saveButton(className)
     }*/ 
    // console.log("Left loop");
 
-    let buttonText = className;
+    let buttonText = `Class ${savedButton.length + 1}`;
     savedButton.push(buttonText);
     localStorage.setItem('savedButton', JSON.stringify(savedButton)); //Converts the object into JSON. 
     buttonCreate(buttonText); 
