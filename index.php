@@ -48,7 +48,6 @@
      </form>
     </div>
     </section>
-    <div><p>Guest</a></p></div>
 </div>
 </body>
 </html>
