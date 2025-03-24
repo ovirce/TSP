@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="scripts/index.js"></script>
     <h2>Game Page</h2>
-    <p><a href="logout.php">Log out</a></p>
+    <a href="logout.php">Log out</a>&nbsp;
+    <a href="Level_one.php"> Level two </a>&nbsp;
+    <a href="Level_two.php">Level three</a>
     <img src="" alt=" ">
     <img scr=" " alt="">
   </body>
