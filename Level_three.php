@@ -34,11 +34,10 @@
     <div class="wild-text">Incorrect, this is Queen Elizabeth, the daughter of Henry the 8th and his second wife Anne Boleyn. She had a 44 year reign between 1558 - 1608.</div>
   </div>
 </div>
-</div>
- 
+
     <a href="index.php">Log out</a></p>
     <a href="index.php"> Quit</a></p>
     <a href="studentPage.php"> Return to student page</a></p>
-   
+    </div>
   </body>
 </header>
