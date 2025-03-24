@@ -35,7 +35,7 @@
   </div>
 </div>
 
-    <a href="index.php">Log out</a></p>
+    <a href="logout.php">Log out</a></p>
     <a href="index.php"> Quit</a></p>
     <a href="studentPage.php"> Return to student page</a></p>
     </div>
