@@ -15,7 +15,7 @@
 
      <div class="wild-imgs-row">
 <div class="wild-imgs">
-  <img src="martin-luther.jpg" alt="Martin Luther" class="wild-pics">
+  <img src="./images/martin-luther.jpg" alt="Martin Luther" class="wild-pics">
   <div class="crossover">
     <div class="wild-text">Incorrect, this is Martin Luther who started the Protestant Reformation in 1517.</div>
   </div>
