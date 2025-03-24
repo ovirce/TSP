@@ -5,9 +5,9 @@
   <title><h1>16th Century Quest </h1></title>
     <meta charset="UTF-8">
      <h2>Level two</h2>
-    <p><a href="logout.php">Log out</a>&nbsp;
-    <p><a href="Level_one.php">Level one</a>&nbsp;
-    <p><a href="Level_three.php">Level three</a></p>
+    <a href="logout.php">Log out</a>&nbsp;
+    <a href="Level_one.php">Level one</a>&nbsp;
+    <a href="Level_three.php">Level three</a></p>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
