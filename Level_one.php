@@ -14,34 +14,36 @@
    
     <title>Login Form</title>
     <h2>Level one</h2>
-    <a href="index.php">Log out</a></p>
-    <a href="Level_two.php"> Next Level </a></p>
-    <a href="index.php">Quit</a></p>
-    <a href="studentPage.php"> Return to student page</a></p>
     <p> What type of fabric did the wealthy people in the 16th century often wear?</p>
+    
     
     <div class="wild-imgs-row">
 <div class="wild-imgs">
   <img src="./images/Wool.png" alt="woolfabric" class="wild-pics">
   <div class="crossover">
-    <div class="wild-text">The Dartmoor ponies are native to Devon. They are an endangered breed.</div>
+    <div class="wild-text">Incorrect.</div>
   </div>
 </div>
  
 <div class="wild-imgs">
   <img src="./images/Velvet.png" alt="puffins" class="wild-pics">
   <div class="crossover">
-    <div class="wild-text">Puffins can be found on the northeast of England, the North of Scotland and on the coast of Pembrokeshire in Wales.</div>
+    <div class="wild-text">Correct.</div>
   </div>
 </div>
  
 <div class="wild-imgs">
   <img src="./images/Denim.png" alt="beaver" class="wild-pics">
   <div class="crossover">
-    <div class="wild-text">Beavers can be found in their natural habitats in places such as Kent, Knapdale and Tay, and have been re-introduced to other areas in the UK.</div>
+    <div class="wild-text">Incorrect.</div>
   </div>
 </div>
-</div>
- 
+
+
+<a href="index.php">Log out</a></p>
+    <a href="Level_two.php"> Next Level </a></p>
+    <a href="index.php">Quit</a></p>
+    <a href="studentPage.php"> Return to student page</a></p>
+    </div>
   </body>
 </header>
