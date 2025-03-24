@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="scripts/index.js"></script>
     <h2>Level three</h2>
-    <a href="logout.php">Log out</a>
-    <a href="logout.php">Log out</a>&nbsp;
+    <a href="index.php">Log out</a>&nbsp;
     <a href="Level_one.php"> Level one </a>&nbsp;
     <a href="Level_two.php">Level two</a></p>
-    <img src="" alt=" ">
-    <img scr=" " alt="">
+    <p> What type of clothing did the wealthy people in the 16th century often wear?</p>
+    <img src="questions.shakespeare.jpg" alt="">
+    <img src="questions.henry8.jpg" alt="">
   </body>
 </header>
