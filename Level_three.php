@@ -12,8 +12,8 @@
     <script src="scripts/index.js"></script>
     <h2>Level three</h2>
     <a href="index.php">Log out</a>&nbsp;
-    <a href="Level_one.php"> Level one </a>&nbsp;
-    <a href="Level_two.php">Level two</a></p>
+    <a href="Level_one.php"> Next Level</a>&nbsp;
+    <a href="Level_two.php">Next Level</a></p>
     <p> What type of clothing did the wealthy people in the 16th century often wear?</p>
     <img src="questions.shakespeare.jpg" alt="">
     <img src="questions.henry8.jpg" alt="">
