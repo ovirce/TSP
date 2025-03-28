@@ -20,7 +20,7 @@
 <div class="imageRow">
   <div class="imageColumn">
     <button id="incorrectAnswerBtnOne">
-      <img src="./images/Wool.png" alt="woolfabric" class="wild-pics">
+      <img src="./images/Wool.png" alt="woolfabric">
     </button>
     <div id="incorrectAnswerOne" class="hiddenClass">
       <p>False, Wool was also worn and was much more affordable in the 16th century then in the 21st,  which made it a common item for peasants to wear aswell</p>
@@ -29,7 +29,7 @@
 
   <div class="imageColumn">
     <button id="correctAnswerBtn">
-      <img src="./images/velvet.jpg" alt="puffins" class="wild-pics">
+      <img src="./images/velvet.jpg" alt="velvet fabric">
     </button>
     <div id="correctAnswer" class="hiddenClass">
       <p>Correct! Tudor Kings and Queens wore the most expensive fabrics such as silk, velvet and satin</p>
@@ -38,7 +38,7 @@
  
   <div class="imageColumn">
     <button id="incorrectAnswerBtnTwo">
-      <img src="./images/Denim.png" alt="beaver" class="wild-pics">
+      <img src="./images/Denim.png" alt="denim fabric">
     </button>
     <div id="incorrectAnswerTwo" class="hiddenClass">
       <p>False, denim fabric originated in 17th century France </p>
@@ -51,6 +51,6 @@
     <a href="index.php">Quit</a></p>
     <a href="studentPage.php"> Return to student page</a></p>
     </div>
-    <script src="scripts/levelOne.JS"> </script>
+    <script src="scripts/level.JS"> </script>
   </body>
 

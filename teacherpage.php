@@ -10,9 +10,7 @@
     <!-- Navigation bar -->
     <nav>
         <ul>
-            <li><a href="home_page.php">Home</a></li>
-            <li><a href="students.html">Students</a></li>
-            <li><a href="teacher.html" class="active">Class Management</a></li>
+            <li><a href="home_page.php">Sign-out</a></li>
         </ul>
     </nav>
 
