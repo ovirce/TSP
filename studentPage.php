@@ -29,7 +29,7 @@
                 <div class="dropdown">
 
                 <div class="dropdown-content">    <!-- class for the dropdown content -->
-                <a href="#">Level One</a>
+                <a href="Level_one.php"> Level One </a></p>
                 <a href="#">Level Two</a>
                 <a href="#">Level Three</a>
                 <p> Text Regarding student info </p>
