@@ -13,31 +13,41 @@
    
     <h2>Level three</h2>
 
-    <div class="wild-imgs-row">
-<div class="wild-imgs">
-  <img src="./images/mary.jpg" alt="Bloody Mary" class="wild-pics">
-  <div class="crossover">
-    <div class="wild-text">Correct! Mary Tudor/Mary I was the daughter of Henry the 8th and Catherine of Aragon.</div>
-  </div>
-</div>
- 
-<div class="wild-imgs">
-  <img src="./images/anne.jpg" alt="Anne of Cleeves" class="wild-pics">
-  <div class="crossover">
-    <div class="wild-text">Incorrect, This is Anne of Cleeves, Henry the 8th 4th Wife.</div>.</div>
-  </div>
-</div>
- 
-<div class="wild-imgs">
-  <img src="./images/elizabeth.jpg" alt="Queen Elizabeth" class="wild-pics">
-  <div class="crossover">
-    <div class="wild-text">Incorrect, this is Queen Elizabeth, the daughter of Henry the 8th and his second wife Anne Boleyn. She had a 44 year reign between 1558 - 1608.</div>
-  </div>
-</div>
+    <div class="imageRow">
+    <div class="imageColumn">
+        <button id="correctAnswerBtn">
+          <img src="./images/mary.jpg" alt="Mary 1st">
+        </button>
+        <div id="correctAnswer" class="hiddenClass">
+          <p>Correct! Mary Tudor/Mary I was the daughter of Henry the 8th and Catherine of Aragon.</p>
+        </div>
+      </div>
+
+      <div class="imageColumn">
+        <button id="incorrectAnswerBtnOne">
+          <img src="./images/anne.jpg" alt="Anne of Cleeves">
+        </button>
+        <div id="incorrectAnswerOne" class="hiddenClass">
+          <p>Incorrect, This is Anne of Cleeves, Henry the 8th 4th Wife.</p>
+        </div>
+      </div>
+    
+      <div class="imageColumn">
+        <button id="incorrectAnswerBtnTwo">
+          <img src="./images/elizabeth.jpg" alt="Queen Elizabeth">
+        </button>
+        <div id="incorrectAnswerTwo" class="hiddenClass">
+          <p>Incorrect, this is Queen Elizabeth, the daughter of Henry the 8th and his second wife Anne Boleyn. She had a 44 year reign between 1558 - 1608. </p>
+       </div> 
+      </div>
+    </div>
 
     <a href="logout.php">Log out</a></p>
     <a href="index.php"> Quit</a></p>
     <a href="studentPage.php"> Return to student page</a></p>
     </div>
+    <script src="scripts/level.JS"></script>
   </body>
 </header>
+
+  
