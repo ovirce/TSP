@@ -124,7 +124,7 @@ function removeClass(removedClass)
         console.log("If statement executed");
         alert("Class exists");
     }
-    else
+    else hidjfndjf
     {
         console.log("Else statement executed");
         alert("Class does not exist");
