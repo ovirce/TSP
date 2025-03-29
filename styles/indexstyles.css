@@ -1,0 +1,86 @@
+body {
+    background: url('../images/homebg2.png') no-repeat center fixed;
+    background-size: cover;
+    font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 48px;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+/*h1 {
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+}*/ /*this is if the teacher and student h1 text is not very readable against the background image, as a backup*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 20px;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    margin: 20px 0;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #274777;
+    color: black;
+    font-size: 24px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #37659c;
+}
+
+a.ca {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.ca:hover {
+    text-decoration: underline;
+}
