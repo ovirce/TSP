@@ -1,0 +1,76 @@
+body {
+    background-color: antiquewhite; 
+    font-family: 'Garamond', serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.imageRow {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.imageColumn {
+    text-align: center;
+}
+
+button img {
+    width: 150px;
+    height: 150px;
+    border: 3px solid brown; 
+    border-radius: 10px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hiddenClass {
+    display: none;
+    background-color: white;
+    border: 2px solid orange;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.hourglass {
+    margin-top: 20px;
+}
+
+.buttons-container {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: orange; 
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin: 8px;
+    border: 3px solid darkorange; 
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    min-width: 150px;
+}

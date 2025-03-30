@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="levelStyle.css">
     <script src="scripts/index.js"></script>
     
   <body>
@@ -46,10 +46,13 @@
   </div>
 </div>
 
-<a href="index.php">Log out</a></p>
-    <a href="Level_two.php"> Next Level </a></p>
-    <a href="index.php">Quit</a></p>
-    <a href="studentPage.php"> Return to student page</a></p>
+<div class="buttons-container">
+    <button onclick="window.location.href='index.php'">Log Out</button>
+    <button onclick="window.location.href='Level_two.php'">Next Level</button>
+    <button onclick="window.location.href='index.php'">Quit</button>
+    <button onclick="window.location.href='studentPage.php'">Return to Student Page</button>
+</div>
+
     </div>
     <script src="scripts/level.JS"> </script>
   </body>
