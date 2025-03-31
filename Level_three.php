@@ -6,17 +6,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/levelStyle.css">
     <script src="scripts/index.js"></script>
-
+    <title>16th Century Quest - Level 3</title>
   <body>
 
     <h1>16th Century Quest </h1>
-   
     <h2>Level three</h2>
     <p>Which English Monarch tried to bring back Catholicism and is known as "Bloody Mary"?</p>
 
     <div class="imageRow">
     <div class="imageColumn">
-        <button id="correctAnswerBtn">
+        <button id="correctAnswerBtn" data-option="1">
           <img src="./images/mary.jpg" alt="Mary 1st">
         </button>
         <div id="correctAnswer" class="hiddenClass">
@@ -25,7 +24,7 @@
       </div>
 
       <div class="imageColumn">
-        <button id="incorrectAnswerBtnOne">
+        <button id="incorrectAnswerBtnOne" data-option="2">
           <img src="./images/anne.jpg" alt="Anne of Cleeves">
         </button>
         <div id="incorrectAnswerOne" class="hiddenClass">
@@ -34,7 +33,7 @@
       </div>
     
       <div class="imageColumn">
-        <button id="incorrectAnswerBtnTwo">
+        <button id="incorrectAnswerBtnTwo" data-option="3">
           <img src="./images/elizabeth.jpg" alt="Queen Elizabeth">
         </button>
         <div id="incorrectAnswerTwo" class="hiddenClass">
