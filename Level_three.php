@@ -4,14 +4,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/levelStyle.css">
     <script src="scripts/index.js"></script>
 
   <body>
 
-  <title><h1>16th Century Quest </h1></title>
+    <h1>16th Century Quest </h1>
    
     <h2>Level three</h2>
+    <p>Which English Monarch tried to bring back Catholicism and is known as "Bloody Mary"?</p>
 
     <div class="imageRow">
     <div class="imageColumn">
@@ -42,10 +43,24 @@
       </div>
     </div>
 
-    <a href="logout.php">Log out</a></p>
-    <a href="index.php"> Quit</a></p>
-    <a href="studentPage.php"> Return to student page</a></p>
+    <div id="timer">
+      <h id="timerCountdown"></h>
+      <img src="./images/timer.png" alt="timer">
+      </div>
+
+    <div id="playAgainContainer" class="hiddenClass">
+      <h2>Play again?</h2>
+      <button onclick ="window.location.href='Level_two.php'">Yes</butto>
+      <button onClick ="window.location.href='studentPage.php'">Return to Student Page</button>
     </div>
+
+    <div class="buttons-container">
+      <button onclick="window.location.href='index.php'">Log Out</button>
+      <button onclick="window.location.href='index.php'">Sign Out</button>
+      <button onclick="window.location.href='studentPage.php'">Finish Game</button>
+    </div>
+
+
     <script src="scripts/level.JS"></script>
   </body>
 </header>

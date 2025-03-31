@@ -11,7 +11,7 @@
     
   <body>
 
-  <title><h1>16th Century Quest </h1></title>
+    <h1>16th Century Quest </h1>
    
     <title>Login Form</title>
     <h2>Level one</h2>
@@ -46,10 +46,21 @@
   </div>
 </div>
 
+<div id="timer">
+  <h id="timerCountdown"></h>
+  <img src="./images/timer.png" alt="timer">
+</div>
+
+<div id="playAgainContainer" class="hiddenClass">
+  <h2>Play again?</h2>
+  <button onclick ="window.location.href='level_one.html'">Yes</button>
+  <button onClick ="window.location.href='studentPage.php'">Return to Student Page</button>
+</div>
+
 <div class="buttons-container">
     <button onclick="window.location.href='index.php'">Log Out</button>
     <button onclick="window.location.href='Level_two.php'">Next Level</button>
-    <button onclick="window.location.href='index.php'">Quit</button>
+    <button onclick="window.location.href='index.php'">Sign Out</button>
     <button onclick="window.location.href='studentPage.php'">Return to Student Page</button>
 </div>
 
