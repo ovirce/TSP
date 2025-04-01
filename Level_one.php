@@ -63,6 +63,6 @@
 </div>
 
     </div>
-    <script src="scripts/level.JS"> </script>
+    <script src="scripts/level.js"> </script>
   </body>
 

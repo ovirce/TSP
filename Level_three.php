@@ -60,7 +60,7 @@
     </div>
 
 
-    <script src="scripts/levelThree.JS"></script>
+    <script src="scripts/level3.js"></script>
   </body>
 </header>
 
