@@ -43,6 +43,7 @@ $conn->close();
         if ($attempt['level'] != $previousLevel) {
             if ($previousLevel !== null) {
                 echo "</ul>";
+                echo "<p>No game has been played<p>";
             }
             echo "<h2>Level " . $attempt['level'] . "</h2>";
             echo "<ul>";
