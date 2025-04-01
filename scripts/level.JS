@@ -67,7 +67,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const answerButtons = document.querySelectorAll('.imageColumn button');
-    const timer = setTimeout(finishedTimer, 5000);
+  //  const timer = setTimeout(finishedTimer, 5000);
     const level = 1; // Hardcoded for level 1
     let countdownTime = 6;
 

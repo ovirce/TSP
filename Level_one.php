@@ -51,7 +51,7 @@
 
 <div id="playAgainContainer" class="hiddenClass">
   <h2>Play again?</h2>
-  <button onclick ="window.location.href='level_one.html'">Yes</button>
+  <button onclick ="window.location.href='level_one.php'">Yes</button>
   <button onClick ="window.location.href='studentPage.php'">Return to Student Page</button>
 </div>
 

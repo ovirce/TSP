@@ -23,7 +23,7 @@
              </div>
              <nav>
                  <button type="button">Leaderboard</button> <!-- button for the leaderboard -->
-                 <button type="button">View Game History Progress</a></button> <!-- button for the history/prgress -->
+                 <button type="button"><a href="gameHistory.php">View Game History Progress</a></button> <!-- button for the history/prgress -->
                  <button type="button"><a href="Level_one.php">Play Game</a></button> <!-- LEVEL ONE LINK FOR PLAY GAME -->             
              </nav>
 
