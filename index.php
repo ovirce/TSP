@@ -28,7 +28,7 @@
      	<input type="password" name="password" placeholder="Password"><br>
 
      	<button type="submit">Login</button>
-          <a href="signup.php" class="ca">Guest</a>
+          <a href="Level_one.php" class="ca">Guest</a>
      </form>
     
     <h1>Teacher</h1>
