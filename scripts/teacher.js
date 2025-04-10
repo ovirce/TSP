@@ -99,7 +99,7 @@ function saveButton(className)
     savedButton.push(buttonText);
     localStorage.setItem('savedButton', JSON.stringify(savedButton)); //Converts the object into JSON. 
     buttonCreate(buttonText); 
-    localStorage.clear(); //Removes the buttons created. 
+   // localStorage.clear(); //Removes the buttons created. 
 }
 
 removeClassFormBtn.addEventListener("click", function()
